@@ -29,8 +29,6 @@ function httpAddNewLaunch(req, res) {
     });
   }
 
-  launch.launchDate = new Date(launch.launchDate); // Convert launchDate again to Date object (redundant, could be removed)
-
   // Check if launchDate is invalid
   if (isNaN(launch.launchDate)) {
     // Respond with status 400 and error message
