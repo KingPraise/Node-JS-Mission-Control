@@ -1,10 +1,9 @@
-const express = require("express");
+const express = require("express"); // Import the Express framework
 
-const { getAllPlanets } = require("./planets.controller");
+const { httpGetAllPlanets } = require("./planets.controller"); // Import the controller function for getting all planets
 
+const planetsRouter = express.Router(); // Create a new router instance for planets
 
-const planetsRouter = express.Router();
+planetsRouter.get("/", httpGetAllPlanets); // Define a GET route for '/' that uses the httpGetAllPlanets controller
 
-planetsRouter.get("/planets", getAllPlanets);
-
-module.exports = planetsRouter;
+module.exports = planetsRouter; // Export the planets router for use in other files
